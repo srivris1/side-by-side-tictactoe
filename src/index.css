@@ -1,0 +1,45 @@
+@import "tailwindcss" source("./");
+
+@theme {
+  --font-sans: "Outfit Variable", "Trebuchet MS", sans-serif;
+  --color-paper: #f7f3ea;
+  --color-surface: #fffcf7;
+  --color-ink: #25231f;
+  --color-muted: #666157;
+  --color-boundary: #8b8173;
+  --color-divider: #d8d0c3;
+  --color-player-x: #b23f2f;
+  --color-player-o: #245e9e;
+  --color-player-x-tint: #fbe6de;
+  --color-player-o-tint: #e1ecf8;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100svh;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+button, summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, summary:focus-visible, a:focus-visible {
+  outline: 3px solid var(--color-player-o);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}
